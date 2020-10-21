@@ -2,7 +2,7 @@ import torch
 import os
 from config import get_arguments
 from models.model import MNIST_classifier
-from utils import progress_bar
+from utils import progress_bar, create_dir
 from dataloader import get_dataloader
 
 
@@ -99,7 +99,8 @@ def main():
     dl_train = get_dataloader(opt, train=True)
     dl_test = get_dataloader(opt, train=False)
     
-    # continue training?
+    # continue training ?
+    create_dir(opt.checkpoint)
     path_model = os.path.join(opt.checkpoint, 'model_ckpt.pth.tar')
     if(os.path.exists(path_model)):
         print('Continue Training')

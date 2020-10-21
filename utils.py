@@ -118,3 +118,13 @@ def format_time(seconds):
         f = '0ms'
     return f
 
+
+def create_dir(path_dir, base_dir='./'):
+    list_subdir = path_dir.strip('.').split('/')
+    list_subdir.remove('')
+    for subdir in list_subdir:
+        base_dir = os.path.join(base_dir, subdir)
+        try:
+            os.mkdir(base_dir)
+        except:
+            pass

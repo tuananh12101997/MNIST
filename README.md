@@ -1,5 +1,5 @@
 ## Convert dataset
-For converting data into png file in stead of numpy array, running
+For converting data into png file instead of numpy array, running
 ```
 $ python preprocess_data.py
 ```

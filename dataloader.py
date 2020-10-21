@@ -17,6 +17,7 @@ class MNIST(torch.utils.data.Dataset):
         
         with open(path_annotation, 'r+') as f:
             self.list_data = f.read().split('\n')
+        self.list_data.remove('')
     
         self.transforms = transforms
         
